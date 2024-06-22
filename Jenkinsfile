@@ -3,6 +3,7 @@ pipeline {
     tools {
         // Define Maven tool with the name configured in Global Tool Configuration
         maven 'Maven_System'
+        jdk 'jdk'
     }
     stages {
         stage('Checkout') {

@@ -25,6 +25,7 @@ pipeline {
             steps {
                 // Run the generated fat JAR
                 bat 'copy resources/Book1.xlsx target'
+                bat 'cd target'
                 bat 'java -jar target/javatest-1.0-SNAPSHOT-jar-with-dependencies.jar'
             }
         }

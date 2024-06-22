@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         // Define Maven tool with the name configured in Global Tool Configuration
+        git 'Default'
         maven 'Maven_System'
         jdk 'jdk'
     }
@@ -16,15 +17,15 @@ pipeline {
         stage('Build') {
             steps {
                 // Build Maven project
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
 
         stage('Run Application') {
             steps {
                 // Run the generated fat JAR
-                bat 'java -version'
-                bat 'java -jar target/javatest-1.0-SNAPSHOT-jar-with-dependencies.jar'
+                sh 'java -version'
+                sh 'java -jar target/javatest-1.0-SNAPSHOT-jar-with-dependencies.jar'
             }
         }
 

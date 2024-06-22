@@ -17,15 +17,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Build Maven project
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
 
         stage('Run Application') {
             steps {
                 // Run the generated fat JAR
-                sh 'java -version'
-                sh 'java -jar target/javatest-1.0-SNAPSHOT-jar-with-dependencies.jar'
+                bat 'java -jar target/javatest-1.0-SNAPSHOT-jar-with-dependencies.jar'
             }
         }
 

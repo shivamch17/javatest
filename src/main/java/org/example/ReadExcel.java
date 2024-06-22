@@ -3,7 +3,6 @@ package org.example;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -12,8 +11,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadExcel {
-
-    public static void main(String[] args) {
+    public static void main() {
         // Configure these variables
         String filePath =  "Book1.xlsx";
         int sheetIndex = 0; // Specify the sheet index to read (0-based)

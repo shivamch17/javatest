@@ -19,16 +19,10 @@ pipeline {
             }
         }
 
-        stage('Package Fat JAR') {
-            steps {
-                // Generate fat JAR using maven-assembly-plugin
-                bat 'mvn assembly:single'
-            }
-        }
-
         stage('Run Application') {
             steps {
                 // Run the generated fat JAR
+                bat 'java -version'
                 bat 'java -jar target/javatest-1.0-SNAPSHOT-jar-with-dependencies.jar'
             }
         }

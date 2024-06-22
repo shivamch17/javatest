@@ -12,21 +12,21 @@ pipeline {
         stage('Build') {
             steps {
                 // Build Maven project
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
 
         stage('Package Fat JAR') {
             steps {
                 // Generate fat JAR using maven-assembly-plugin
-                sh 'mvn assembly:single'
+                bat 'mvn assembly:single'
             }
         }
 
         stage('Run Application') {
             steps {
                 // Run the generated fat JAR
-                sh 'java -jar target/javatest-1.0-SNAPSHOT-jar-with-dependencies.jar'
+                bat 'java -jar target/javatest-1.0-SNAPSHOT-jar-with-dependencies.jar'
             }
         }
 

@@ -26,14 +26,7 @@ pipeline {
                 // Run the generated fat JAR
                 bat 'copy resources/Book1.xlsx target'
                 bat 'cd target'
-                bat 'java -jar target/javatest-1.0-SNAPSHOT-jar-with-dependencies.jar'
-            }
-        }
-
-        stage('Archive Artifact') {
-            steps {
-                // Archive the fat JAR as a build artifact
-                archiveArtifacts artifacts: 'target/javatest-1.0-SNAPSHOT-jar-with-dependencies.jar', allowEmptyArchive: true
+                bat 'java -jar javatest-1.0-SNAPSHOT-jar-with-dependencies.jar'
             }
         }
     }

@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -13,7 +14,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ReadExcel {
     public static void main() {
         // Configure these variables
-        String filePath =  "Book1.xlsx";
+        File jarFile = new File(ReadExcel.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        String parentPath = jarFile.getParent();
+        String filePath = parentPath + File.separator + "Book1.xlsx";
         int sheetIndex = 0; // Specify the sheet index to read (0-based)
         String columnsToReadString = "-1"; // Example: Reading columns by names
 
